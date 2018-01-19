@@ -1,4 +1,4 @@
-(defproject re-frame-datatable "0.6.0"
+(defproject re-frame-datatable "0.6.1-SNAPSHOT"
   :description "DataTable component for re-frame 0.8.0+"
   :url "https://github.com/kishanov/re-frame-datatable"
   :license {:name "Eclipse Public License"

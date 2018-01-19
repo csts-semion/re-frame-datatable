@@ -33,6 +33,7 @@
 ; options
 
 (s/def ::table-classes ::css-classes)
+(s/def ::tr-click-fn fn?)
 
 (s/def ::per-page (s/and integer? pos?))
 (s/def ::cur-page (s/and integer? (complement neg?)))
@@ -55,6 +56,7 @@
     (s/keys :opt [::pagination
                   ::header-enabled?
                   ::table-classes
+                  ::tr-click-fn
                   ::selection
                   ::extra-header-row-component
                   ::footer-component])))
@@ -338,6 +340,7 @@
                {:keys [::selection]} state
                {:keys [::table-classes
                        ::tr-class-fn
+                       ::tr-click-fn
                        ::header-enabled?
                        ::extra-header-row-component
                        ::footer-component
@@ -404,6 +407,8 @@
                    [:tr
                     (merge
                       {}
+                      (when tr-click-fn
+                        {:on-click (partial tr-click-fn i data-entry)})
                       (when tr-class-fn
                         (css-class-str (tr-class-fn data-entry))))
 
