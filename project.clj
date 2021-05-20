@@ -1,4 +1,4 @@
-(defproject org.semion/re-frame-datatable "1.0.0-SNAPSHOT"
+(defproject org.semion/re-frame-datatable "1.0.0"
   :description "DataTable component for re-frame"
   :url "https://github.com/kishanov/re-frame-datatable"
   :license {:name "Eclipse Public License"
