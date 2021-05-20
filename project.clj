@@ -5,5 +5,5 @@
             :url  "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.10.0"]
                  [org.clojure/clojurescript "1.10.844"]
-                 [reagent "0.10.0"]
+                 [reagent "1.0.0"]
                  [re-frame "1.1.2"]])
