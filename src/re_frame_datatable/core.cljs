@@ -318,7 +318,7 @@
   (let [view-data (re-frame/subscribe [::data db-id data-sub])]
 
     (reagent/create-class
-      {:component-will-mount
+      {:component-did-mount
        #(re-frame/dispatch [::on-will-mount db-id data-sub columns-def options])
 
 
@@ -334,7 +334,7 @@
        #(re-frame/dispatch [::on-will-unmount db-id])
 
 
-       :component-function
+       :reagent-render
        (fn [db-id data-sub columns-def & [options]]
          (let [{:keys [::visible-items ::state]} @view-data
                {:keys [::selection]} state
